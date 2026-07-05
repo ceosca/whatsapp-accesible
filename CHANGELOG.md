@@ -6,6 +6,25 @@ versiones usan [Versionado Semántico](https://semver.org/lang/es/).
 
 ---
 
+## [1.2.0] — 2026-07-05
+
+### ✨ Nuevo
+- **Búsqueda rápida por teclado** en la lista de chats: escribí las primeras letras
+  de un nombre y salta directo (como en el Explorador de Windows). Repetir la misma
+  letra recorre los que empiezan igual.
+- **Elegir micrófono y dispositivo de reproducción** — desde Ajustes o con **Ctrl+P**
+  en cualquier pantalla. Se muestran solo los dispositivos activos.
+- **Grabar audios en estéreo** (opcional, en Ajustes).
+- Mientras grabás un audio: **Alt+P** pausa y reanuda, y **Alt+M** reproduce lo que
+  llevás grabado para escucharte antes de enviarlo.
+- Botón **"¿Qué hay de nuevo?"** en Ajustes (y se muestra solo después de actualizar).
+
+### 🐛 Corregido
+- Al volver de un grupo con Escape, ahora vuelve a la pestaña **Grupos** (antes iba
+  siempre a Recientes).
+
+---
+
 ## [1.1.0] — 2026-07-05
 
 ### ✨ Nuevo
@@ -58,5 +77,6 @@ versiones usan [Versionado Semántico](https://semver.org/lang/es/).
 - Separadores de día y de mensajes no leídos.
 - Actualizaciones automáticas.
 
+[1.2.0]: ../../releases/tag/v1.2.0
 [1.1.0]: ../../releases/tag/v1.1.0
 [1.0.0]: ../../releases/tag/v1.0.0
