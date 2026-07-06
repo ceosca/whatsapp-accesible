@@ -6,6 +6,22 @@ versiones usan [Versionado Semántico](https://semver.org/lang/es/).
 
 ---
 
+## [1.2.5] — 2026-07-06
+
+### ✨ Nuevo
+- **Aviso por voz de "Leído" / "Reproducido"**: cuando la otra persona lee o reproduce
+  tu mensaje en el chat que tenés abierto, ahora te lo dice por voz (además del sonido),
+  así te enterás al instante sin tener que ir hasta el mensaje.
+- **Confirmación de "reproducido" al escuchar notas de voz**: cuando reproducís una nota
+  de voz que te enviaron, ahora le avisamos a quien te la mandó (le aparece el
+  "reproducido"), igual que en WhatsApp.
+
+### 🐛 Corregido
+- **Reenvío de notas de voz**: al reenviar un audio ya no aparece con duración
+  **0 segundos** — conserva su duración real.
+
+---
+
 ## [1.2.4] — 2026-07-05
 
 ### 🐛 Corregido
@@ -117,6 +133,7 @@ versiones usan [Versionado Semántico](https://semver.org/lang/es/).
 - Separadores de día y de mensajes no leídos.
 - Actualizaciones automáticas.
 
+[1.2.5]: ../../releases/tag/v1.2.5
 [1.2.4]: ../../releases/tag/v1.2.4
 [1.2.3]: ../../releases/tag/v1.2.3
 [1.2.2]: ../../releases/tag/v1.2.2
