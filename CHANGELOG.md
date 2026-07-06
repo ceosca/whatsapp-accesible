@@ -6,6 +6,16 @@ versiones usan [Versionado Semántico](https://semver.org/lang/es/).
 
 ---
 
+## [1.2.4] — 2026-07-05
+
+### 🐛 Corregido
+- **Instalación de actualizaciones**: en PCs cuya ruta de usuario tiene tildes o eñes
+  (por ejemplo `C:\Users\José\…`), la actualización se descargaba pero no llegaba a
+  instalarse y volvía a pedirla en cada arranque. Ahora se instala correctamente.
+  (Además, el instalador cierra el motor y deja un registro en `data/update.log`.)
+
+---
+
 ## [1.2.3] — 2026-07-05
 
 ### 🐛 Corregido
@@ -107,6 +117,7 @@ versiones usan [Versionado Semántico](https://semver.org/lang/es/).
 - Separadores de día y de mensajes no leídos.
 - Actualizaciones automáticas.
 
+[1.2.4]: ../../releases/tag/v1.2.4
 [1.2.3]: ../../releases/tag/v1.2.3
 [1.2.2]: ../../releases/tag/v1.2.2
 [1.2.1]: ../../releases/tag/v1.2.1
