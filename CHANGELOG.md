@@ -6,12 +6,23 @@ versiones usan [Versionado Semántico](https://semver.org/lang/es/).
 
 ---
 
-## [1.2.1] — 2026-07-05
+## [1.2.2] — 2026-07-05
 
 ### 🐛 Corregido
 - Al cambiar el **micrófono** o el **dispositivo de reproducción** en Ajustes, el
   cambio ahora se aplica **al instante**. Antes había que reiniciar la app para que
   la grabación y la reproducción usaran el dispositivo nuevo.
+- Cuando la app **no puede verificar** si hay actualizaciones (sin internet o límite
+  temporal de GitHub), ahora lo avisa, en vez de decir por error que ya tenés la
+  última versión.
+
+---
+
+## [1.2.1] — 2026-07-05
+
+### 🐛 Corregido
+- Los dispositivos de audio se aplican al instante (incluido luego en la 1.2.2 junto
+  con el aviso de verificación de actualizaciones).
 
 ---
 
@@ -86,6 +97,7 @@ versiones usan [Versionado Semántico](https://semver.org/lang/es/).
 - Separadores de día y de mensajes no leídos.
 - Actualizaciones automáticas.
 
+[1.2.2]: ../../releases/tag/v1.2.2
 [1.2.1]: ../../releases/tag/v1.2.1
 [1.2.0]: ../../releases/tag/v1.2.0
 [1.1.0]: ../../releases/tag/v1.1.0
