@@ -6,6 +6,16 @@ versiones usan [Versionado Semántico](https://semver.org/lang/es/).
 
 ---
 
+## [1.2.3] — 2026-07-05
+
+### 🐛 Corregido
+- Cambio de dispositivos de audio corregido a fondo: ahora podés cambiar el micrófono
+  o el altavoz **las veces que quieras** —y volver a "Predeterminado del sistema"— y
+  se aplica al instante. Antes solo tomaba bien el primer cambio y después quedaba
+  pegado al anterior.
+
+---
+
 ## [1.2.2] — 2026-07-05
 
 ### 🐛 Corregido
@@ -97,6 +107,7 @@ versiones usan [Versionado Semántico](https://semver.org/lang/es/).
 - Separadores de día y de mensajes no leídos.
 - Actualizaciones automáticas.
 
+[1.2.3]: ../../releases/tag/v1.2.3
 [1.2.2]: ../../releases/tag/v1.2.2
 [1.2.1]: ../../releases/tag/v1.2.1
 [1.2.0]: ../../releases/tag/v1.2.0
