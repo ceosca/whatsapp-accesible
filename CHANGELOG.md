@@ -6,6 +6,20 @@ versiones usan [Versionado Semántico](https://semver.org/lang/es/).
 
 ---
 
+## [1.2.9] — 2026-07-07
+
+### 🐛 Corregido
+- **Confirmación de lectura en vivo**: con un chat abierto, un mensaje nuevo que llega
+  ahora se marca como **leído al instante** —antes, a quien te escribió le quedaba en
+  "entregado" aunque lo estuvieras viendo.
+
+### ✨ Nuevo
+- **"Escribiendo…" y "grabando audio…" salientes**: la otra persona ahora ve tu estado
+  cuando escribís o grabás una nota de voz (tu cliente lo mostraba pero no lo enviaba).
+  Respeta el modo fantasma.
+
+---
+
 ## [1.2.8] — 2026-07-07
 
 ### ✨ Nuevo
@@ -179,6 +193,7 @@ versiones usan [Versionado Semántico](https://semver.org/lang/es/).
 - Separadores de día y de mensajes no leídos.
 - Actualizaciones automáticas.
 
+[1.2.9]: ../../releases/tag/v1.2.9
 [1.2.8]: ../../releases/tag/v1.2.8
 [1.2.7]: ../../releases/tag/v1.2.7
 [1.2.6]: ../../releases/tag/v1.2.6
