@@ -6,6 +6,17 @@ versiones usan [Versionado Semántico](https://semver.org/lang/es/).
 
 ---
 
+## [1.2.7] — 2026-07-06
+
+### 🐛 Corregido
+- **Reproducción en estéreo con velocidad alterada**: en audios estéreo (música que te
+  mandan, o tus propias grabaciones en estéreo —incluido el monitoreo mientras grabás—),
+  poner **1.5x o 2x** en lugar de acelerar **bajaba el tono una octava** y sonaba lento y
+  raro (el estéreo quedaba mezclado en un solo canal, al doble de largo). Ahora acelera
+  bien, **manteniendo el tono**.
+
+---
+
 ## [1.2.6] — 2026-07-06
 
 ### 🐛 Corregido
@@ -147,6 +158,7 @@ versiones usan [Versionado Semántico](https://semver.org/lang/es/).
 - Separadores de día y de mensajes no leídos.
 - Actualizaciones automáticas.
 
+[1.2.7]: ../../releases/tag/v1.2.7
 [1.2.6]: ../../releases/tag/v1.2.6
 [1.2.5]: ../../releases/tag/v1.2.5
 [1.2.4]: ../../releases/tag/v1.2.4
