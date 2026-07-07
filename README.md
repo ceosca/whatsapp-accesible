@@ -6,7 +6,7 @@
 
 Rápido, liviano y 100% manejable por teclado — pensado para que fluya con tu lector de pantalla.
 
-![Versión](https://img.shields.io/badge/versión-1.2.5-2ea44f)
+![Versión](https://img.shields.io/badge/versión-1.2.6-2ea44f)
 ![Windows](https://img.shields.io/badge/Windows-10%20%2F%2011-0078D6?logo=windows)
 ![Accesible](https://img.shields.io/badge/lectores-NVDA%20·%20JAWS%20·%20Narrador-6f42c1)
 ![Sin instalación](https://img.shields.io/badge/portable-sin%20instalación-orange)

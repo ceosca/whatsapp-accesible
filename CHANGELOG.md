@@ -6,6 +6,20 @@ versiones usan [Versionado Semántico](https://semver.org/lang/es/).
 
 ---
 
+## [1.2.6] — 2026-07-06
+
+### 🐛 Corregido
+- **Actualizaciones automáticas (crítico)**: por fin se instalan solas. Hasta ahora la
+  actualización se descargaba pero **no llegaba a instalarse** —la app se cerraba y
+  volvía a abrir en la versión anterior, pidiéndola de nuevo—. Quedó resuelto de raíz
+  (el instalador se quedaba sin consola y se cortaba antes de copiar). **Esta es la
+  última actualización que hay que instalar a mano; a partir de acá, se actualiza sola.**
+
+> Incluye también lo de la 1.2.5 (avisos de leído/reproducido y el fix del audio
+> reenviado), que hasta ahora no había llegado a instalarse por este mismo problema.
+
+---
+
 ## [1.2.5] — 2026-07-06
 
 ### ✨ Nuevo
@@ -133,6 +147,7 @@ versiones usan [Versionado Semántico](https://semver.org/lang/es/).
 - Separadores de día y de mensajes no leídos.
 - Actualizaciones automáticas.
 
+[1.2.6]: ../../releases/tag/v1.2.6
 [1.2.5]: ../../releases/tag/v1.2.5
 [1.2.4]: ../../releases/tag/v1.2.4
 [1.2.3]: ../../releases/tag/v1.2.3
