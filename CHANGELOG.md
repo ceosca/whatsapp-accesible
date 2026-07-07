@@ -6,6 +6,27 @@ versiones usan [Versionado Semántico](https://semver.org/lang/es/).
 
 ---
 
+## [1.2.8] — 2026-07-07
+
+### ✨ Nuevo
+- **Filtrar el historial**: desde el menú contextual del chat, **"Filtrar"** muestra solo
+  los **Enlaces**, las **Fotos y videos**, los **Audios** o los **Documentos** de todo el
+  chat. **"Todo"** (o **Escape**) vuelve al chat completo.
+
+### 🔧 Mejorado
+- **Escape** ahora sale del chat desde **cualquier lugar** (la lista de mensajes, la caja
+  de texto, los botones, la vista de conexión), no solo desde algunos. Mientras grabás,
+  Escape cancela la grabación.
+- **Búsqueda (Ctrl+F)**: ahora busca en **todo** el historial (lo carga completo antes de
+  buscar), así encuentra la palabra esté donde esté —antes solo miraba lo ya cargado.
+
+### 🐛 Corregido
+- **Minimizado**: con un chat abierto, al minimizar con Alt+F4, los mensajes que llegan a
+  ese chat ahora se anuncian como **"mensaje nuevo"** y quedan como **no leídos** (antes
+  leía el contenido y no avisaba). Y ya **no dice "Leído"** mientras está minimizado.
+
+---
+
 ## [1.2.7] — 2026-07-06
 
 ### 🐛 Corregido
@@ -158,6 +179,7 @@ versiones usan [Versionado Semántico](https://semver.org/lang/es/).
 - Separadores de día y de mensajes no leídos.
 - Actualizaciones automáticas.
 
+[1.2.8]: ../../releases/tag/v1.2.8
 [1.2.7]: ../../releases/tag/v1.2.7
 [1.2.6]: ../../releases/tag/v1.2.6
 [1.2.5]: ../../releases/tag/v1.2.5
