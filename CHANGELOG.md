@@ -6,6 +6,16 @@ versiones usan [Versionado Semántico](https://semver.org/lang/es/).
 
 ---
 
+## [1.2.10] — 2026-07-07
+
+### 🐛 Corregido
+- **Actualización automática que rompía la app en algunas PCs**: después de actualizar,
+  la app no abría (error de "argumento inesperado") porque el instalador dejaba un
+  archivo de una versión anterior. Ahora la actualización **limpia lo viejo**
+  correctamente, sin tocar tus datos.
+
+---
+
 ## [1.2.9] — 2026-07-07
 
 ### 🐛 Corregido
@@ -193,6 +203,7 @@ versiones usan [Versionado Semántico](https://semver.org/lang/es/).
 - Separadores de día y de mensajes no leídos.
 - Actualizaciones automáticas.
 
+[1.2.10]: ../../releases/tag/v1.2.10
 [1.2.9]: ../../releases/tag/v1.2.9
 [1.2.8]: ../../releases/tag/v1.2.8
 [1.2.7]: ../../releases/tag/v1.2.7
