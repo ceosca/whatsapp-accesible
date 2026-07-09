@@ -6,6 +6,31 @@ versiones usan [Versionado Semántico](https://semver.org/lang/es/).
 
 ---
 
+## [2.0.0] — 2026-07-09
+
+**Versión 2.0** — app mucho más liviana y un buen pulido de audio y escritura.
+
+### 🪶 Mucho más liviana
+- La descarga pasó de **~63 MB a ~26 MB**: reemplazamos los componentes pesados de audio
+  (numpy + libsndfile + PyAV) por un **ffmpeg propio de ~2 MB** (con libopus). Funciona
+  igual o mejor.
+
+### ✨ Nuevo
+- **Liberar espacio** (Ajustes): borra videos, música, fotos y documentos descargados y
+  **conserva las notas de voz**.
+- **Filtrar**: "Notas de voz" y "Audios" (música y archivos) quedaron separados.
+- **Dispositivos de audio en vivo**: con **Ctrl+P**, cambiar micrófono o auriculares se
+  aplica al instante, sin dar Aceptar.
+- **Ctrl+Enter / Shift+Enter** hace una nueva línea al escribir (Enter sigue enviando).
+
+### 🔧 Mejorado
+- **Notas de voz a 64k** — más nítidas que las típicas de WhatsApp.
+- **Pegar texto multilínea** entra completo (antes se cortaba en el primer salto).
+- **Reproductor**: al terminar, el audio se desmonta (la flecha izquierda ya no lo
+  revive), y Espacio/flechas solo actúan cuando hay un audio cargado.
+
+---
+
 ## [1.2.11] — 2026-07-09
 
 ### 🔧 Mejorado
@@ -217,6 +242,7 @@ versiones usan [Versionado Semántico](https://semver.org/lang/es/).
 - Separadores de día y de mensajes no leídos.
 - Actualizaciones automáticas.
 
+[2.0.0]: ../../releases/tag/v2.0.0
 [1.2.11]: ../../releases/tag/v1.2.11
 [1.2.10]: ../../releases/tag/v1.2.10
 [1.2.9]: ../../releases/tag/v1.2.9
