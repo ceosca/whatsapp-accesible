@@ -6,6 +6,20 @@ versiones usan [Versionado Semántico](https://semver.org/lang/es/).
 
 ---
 
+## [1.2.11] — 2026-07-09
+
+### 🔧 Mejorado
+- **App más liviana**: reemplazamos un componente de audio pesado (~30 MB) por una
+  herramienta propia de ~1 MB. La descarga y las actualizaciones pesan **~25 MB menos**,
+  y se elimina de raíz un error que a veces rompía el armado de versiones nuevas. El
+  **control de velocidad** de los audios funciona exactamente igual.
+
+### 🗑️ Quitado
+- La opción **"estado con foto y música"** (era lo único que usaba ese componente
+  pesado). Los estados de **texto, imagen, video y audio** siguen igual.
+
+---
+
 ## [1.2.10] — 2026-07-07
 
 ### 🐛 Corregido
@@ -203,6 +217,7 @@ versiones usan [Versionado Semántico](https://semver.org/lang/es/).
 - Separadores de día y de mensajes no leídos.
 - Actualizaciones automáticas.
 
+[1.2.11]: ../../releases/tag/v1.2.11
 [1.2.10]: ../../releases/tag/v1.2.10
 [1.2.9]: ../../releases/tag/v1.2.9
 [1.2.8]: ../../releases/tag/v1.2.8
