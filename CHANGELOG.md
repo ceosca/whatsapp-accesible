@@ -6,6 +6,19 @@ versiones usan [Versionado Semántico](https://semver.org/lang/es/).
 
 ---
 
+## [2.0.1] — 2026-07-10
+
+### 🐛 Corregido
+- **Ruido fuerte al reproducir notas de voz recibidas** ("trrr"/"tac", como
+  interferencias que molestan al oído). La 2.0 forzaba la reproducción a 48000 Hz en
+  estéreo; en placas de audio nativas a 44100 Hz (vía el driver MME de Windows) esa
+  reconversión metía el ruido. Ahora la reproducción usa el **formato nativo de tu
+  placa** y respeta **mono/estéreo del origen** —una nota de voz mono suena como
+  mono—, igual que antes de la 2.0. Todo el procesamiento interno del audio ya era
+  correcto: el problema estaba solo en cómo se le entregaba al driver.
+
+---
+
 ## [2.0.0] — 2026-07-09
 
 **Versión 2.0** — app mucho más liviana y un buen pulido de audio y escritura.
@@ -242,6 +255,7 @@ versiones usan [Versionado Semántico](https://semver.org/lang/es/).
 - Separadores de día y de mensajes no leídos.
 - Actualizaciones automáticas.
 
+[2.0.1]: ../../releases/tag/v2.0.1
 [2.0.0]: ../../releases/tag/v2.0.0
 [1.2.11]: ../../releases/tag/v1.2.11
 [1.2.10]: ../../releases/tag/v1.2.10
