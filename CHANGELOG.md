@@ -6,6 +6,26 @@ versiones usan [Versionado Semántico](https://semver.org/lang/es/).
 
 ---
 
+## [2.0.4] — 2026-07-13
+
+### 🐛 Corregido
+- **Ruido fuerte ("trrr"/"tac", interferencias) al reproducir notas de voz recibidas —
+  solucionado de raíz.** La causa real no estaba en cómo se reproducía, sino en cómo se
+  **decodificaba**: nuestro decodificador de Opus interpretaba mal ciertos frames (los de
+  las partes más fuertes) de algunas notas y generaba esa distorsión. El archivo siempre
+  estuvo perfecto (VLC lo tocaba bien). Ahora el audio se decodifica con **libopus** (el
+  mismo motor que usa VLC) y las notas suenan limpias, a su calidad nativa.
+- **Guardar audios WAV o MP3**: al guardar un audio que te mandan en WAV o MP3, ahora se
+  guarda en su **formato original** (antes lo forzaba a opus). Las notas de voz siguen en
+  opus.
+
+### 🔧 Mejorado
+- La reproducción usa el motor **DirectSound** de Windows (más limpio, como VLC) y toca
+  cada audio a su **frecuencia nativa** —una nota de 16 kHz suena como 16 kHz, sin
+  inflarla.
+
+---
+
 ## [2.0.1] — 2026-07-10
 
 ### 🐛 Corregido
@@ -255,6 +275,7 @@ versiones usan [Versionado Semántico](https://semver.org/lang/es/).
 - Separadores de día y de mensajes no leídos.
 - Actualizaciones automáticas.
 
+[2.0.4]: ../../releases/tag/v2.0.4
 [2.0.1]: ../../releases/tag/v2.0.1
 [2.0.0]: ../../releases/tag/v2.0.0
 [1.2.11]: ../../releases/tag/v1.2.11
