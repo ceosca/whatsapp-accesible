@@ -6,6 +6,22 @@ versiones usan [Versionado Semántico](https://semver.org/lang/es/).
 
 ---
 
+## [2.0.5] — 2026-07-14
+
+### 🐛 Corregido
+- **Grupos: salir/eliminar ahora refresca la lista al instante.** Al salir de un grupo,
+  quedaba en la lista hasta que hacías otra cosa (salir de otro grupo hacía desaparecer el
+  primero). Era un desfasaje: la lista re-agregaba el grupo desde el registro interno de
+  WhatsApp, que tarda un instante en enterarse de que saliste. Ahora el grupo **se va al
+  toque**.
+
+### 🔧 Mejorado
+- Al **"Eliminar chat"** de un grupo, el mensaje de confirmación aclara que eso **solo borra
+  el chat de tu lista** y que **seguís siendo miembro** del grupo (para irte de verdad, usá
+  **"Salir del grupo"**).
+
+---
+
 ## [2.0.4] — 2026-07-13
 
 ### 🐛 Corregido
@@ -275,6 +291,7 @@ versiones usan [Versionado Semántico](https://semver.org/lang/es/).
 - Separadores de día y de mensajes no leídos.
 - Actualizaciones automáticas.
 
+[2.0.5]: ../../releases/tag/v2.0.5
 [2.0.4]: ../../releases/tag/v2.0.4
 [2.0.1]: ../../releases/tag/v2.0.1
 [2.0.0]: ../../releases/tag/v2.0.0
