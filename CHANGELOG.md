@@ -6,6 +6,16 @@ versiones usan [Versionado Semántico](https://semver.org/lang/es/).
 
 ---
 
+## [2.0.6] — 2026-07-14
+
+### 🐛 Corregido
+- **Error al alternar audios mono/estéreo**: al reproducir un audio con distinta cantidad
+  de canales que el anterior (una nota de voz mono y después un audio estéreo, o al revés),
+  saltaba un error interno y podía cortar el sonido un instante. Era una condición de
+  carrera al reconstruir el reproductor; ya no ocurre.
+
+---
+
 ## [2.0.5] — 2026-07-14
 
 ### 🐛 Corregido
@@ -291,6 +301,7 @@ versiones usan [Versionado Semántico](https://semver.org/lang/es/).
 - Separadores de día y de mensajes no leídos.
 - Actualizaciones automáticas.
 
+[2.0.6]: ../../releases/tag/v2.0.6
 [2.0.5]: ../../releases/tag/v2.0.5
 [2.0.4]: ../../releases/tag/v2.0.4
 [2.0.1]: ../../releases/tag/v2.0.1
