@@ -6,6 +6,17 @@ versiones usan [Versionado Semántico](https://semver.org/lang/es/).
 
 ---
 
+## [2.0.7] — 2026-07-14
+
+### 🐛 Corregido
+- **Cambio de dispositivo de reproducción (Ctrl+P) inestable**: si tenías dos salidas que
+  empiezan con la misma palabra (por ejemplo dos "Altavoces …" o dos "Auriculares …"), al
+  elegir una se cambiaba a la otra —o no cambiaba—. El código las comparaba solo por la
+  primera palabra y agarraba siempre la primera. Ahora selecciona **exactamente** el
+  dispositivo que elegís.
+
+---
+
 ## [2.0.6] — 2026-07-14
 
 ### 🐛 Corregido
@@ -301,6 +312,7 @@ versiones usan [Versionado Semántico](https://semver.org/lang/es/).
 - Separadores de día y de mensajes no leídos.
 - Actualizaciones automáticas.
 
+[2.0.7]: ../../releases/tag/v2.0.7
 [2.0.6]: ../../releases/tag/v2.0.6
 [2.0.5]: ../../releases/tag/v2.0.5
 [2.0.4]: ../../releases/tag/v2.0.4
