@@ -6,6 +6,17 @@ versiones usan [Versionado Semántico](https://semver.org/lang/es/).
 
 ---
 
+## [2.0.10] — 2026-07-16
+
+### 🐛 Corregido
+- **"No leídos fantasma"**: a veces un chat avisaba mensajes no leídos (1, o hasta muchísimos
+  de golpe), pero al entrar no había nada nuevo —los mismos mensajes de siempre. Pasaba porque
+  WhatsApp a veces **re-entrega** mensajes que ya tenías (mismo mensaje, reintentado); el motor
+  los volvía a contar como no leídos y a avisar. Ahora un mensaje ya conocido **no vuelve a
+  contar ni a avisar**; solo cuentan los realmente nuevos.
+
+---
+
 ## [2.0.9] — 2026-07-15
 
 ### ✨ Nuevo
@@ -334,6 +345,7 @@ versiones usan [Versionado Semántico](https://semver.org/lang/es/).
 - Separadores de día y de mensajes no leídos.
 - Actualizaciones automáticas.
 
+[2.0.10]: ../../releases/tag/v2.0.10
 [2.0.9]: ../../releases/tag/v2.0.9
 [2.0.8]: ../../releases/tag/v2.0.8
 [2.0.7]: ../../releases/tag/v2.0.7
