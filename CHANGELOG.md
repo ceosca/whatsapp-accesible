@@ -6,6 +6,16 @@ versiones usan [Versionado Semántico](https://semver.org/lang/es/).
 
 ---
 
+## [2.0.11] — 2026-07-16
+
+### 🐛 Corregido
+- **Chat de un contacto nuevo tomaba tu nombre**: al responderle a alguien que te escribió
+  por primera vez (y no tenés agendado), el chat se **renombraba con tu propio nombre de
+  perfil** en vez del de la persona. Ahora el chat conserva el nombre del contacto; si ya
+  te quedó mal, se corrige solo con el próximo mensaje que esa persona te mande.
+
+---
+
 ## [2.0.10] — 2026-07-16
 
 ### 🐛 Corregido
@@ -345,6 +355,7 @@ versiones usan [Versionado Semántico](https://semver.org/lang/es/).
 - Separadores de día y de mensajes no leídos.
 - Actualizaciones automáticas.
 
+[2.0.11]: ../../releases/tag/v2.0.11
 [2.0.10]: ../../releases/tag/v2.0.10
 [2.0.9]: ../../releases/tag/v2.0.9
 [2.0.8]: ../../releases/tag/v2.0.8
