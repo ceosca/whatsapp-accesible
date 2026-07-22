@@ -6,6 +6,17 @@ versiones usan [Versionado Semántico](https://semver.org/lang/es/).
 
 ---
 
+## [2.0.9] — 2026-07-15
+
+### ✨ Nuevo
+- **En grupos, "Enviar mensaje al privado" y "Responder en privado"** desde el menú
+  contextual de un mensaje. La primera abre el chat 1 a 1 con quien escribió ese mensaje;
+  la segunda abre ese privado **citando** el mensaje del grupo —como el "responder en
+  privado" de WhatsApp—, así la otra persona lo ve como una respuesta a su mensaje del
+  grupo.
+
+---
+
 ## [2.0.8] — 2026-07-15
 
 ### 🐛 Corregido
@@ -323,6 +334,7 @@ versiones usan [Versionado Semántico](https://semver.org/lang/es/).
 - Separadores de día y de mensajes no leídos.
 - Actualizaciones automáticas.
 
+[2.0.9]: ../../releases/tag/v2.0.9
 [2.0.8]: ../../releases/tag/v2.0.8
 [2.0.7]: ../../releases/tag/v2.0.7
 [2.0.6]: ../../releases/tag/v2.0.6
