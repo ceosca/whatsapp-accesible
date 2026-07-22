@@ -6,6 +6,17 @@ versiones usan [Versionado Semántico](https://semver.org/lang/es/).
 
 ---
 
+## [2.0.8] — 2026-07-15
+
+### 🐛 Corregido
+- **Mensajes desordenados al reconectar**: al reabrir la app después de estar un tiempo
+  desconectado, en un grupo con muchos no leídos (30-60) WhatsApp los entrega todos juntos
+  y, con el chat abierto, algunos caían al fondo fuera de orden (mensajes viejos después de
+  los nuevos). Ahora, cuando llega una tanda fuera de orden, la lista **se reacomoda sola por
+  horario** apenas termina la ráfaga, dejándote en el mismo mensaje en el que estabas.
+
+---
+
 ## [2.0.7] — 2026-07-14
 
 ### 🐛 Corregido
@@ -312,6 +323,7 @@ versiones usan [Versionado Semántico](https://semver.org/lang/es/).
 - Separadores de día y de mensajes no leídos.
 - Actualizaciones automáticas.
 
+[2.0.8]: ../../releases/tag/v2.0.8
 [2.0.7]: ../../releases/tag/v2.0.7
 [2.0.6]: ../../releases/tag/v2.0.6
 [2.0.5]: ../../releases/tag/v2.0.5
