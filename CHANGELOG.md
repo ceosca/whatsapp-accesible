@@ -6,6 +6,16 @@ versiones usan [Versionado Semántico](https://semver.org/lang/es/).
 
 ---
 
+## [2.0.12] — 2026-07-17
+
+### 🐛 Corregido
+- **Tu mensaje se ubicaba arriba del que te mandaron**: al responder justo después de recibir
+  un mensaje, el tuyo a veces aparecía **arriba** en vez de abajo. Pasaba cuando el reloj de tu
+  PC estaba un poco atrasado respecto a WhatsApp (tu mensaje quedaba con una hora menor). Ahora
+  un mensaje que enviás nunca queda con hora anterior al último del chat, así siempre va **abajo**.
+
+---
+
 ## [2.0.11] — 2026-07-16
 
 ### 🐛 Corregido
@@ -355,6 +365,7 @@ versiones usan [Versionado Semántico](https://semver.org/lang/es/).
 - Separadores de día y de mensajes no leídos.
 - Actualizaciones automáticas.
 
+[2.0.12]: ../../releases/tag/v2.0.12
 [2.0.11]: ../../releases/tag/v2.0.11
 [2.0.10]: ../../releases/tag/v2.0.10
 [2.0.9]: ../../releases/tag/v2.0.9
