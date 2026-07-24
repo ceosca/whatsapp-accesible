@@ -6,6 +6,21 @@ versiones usan [Versionado Semántico](https://semver.org/lang/es/).
 
 ---
 
+## [2.0.13] — 2026-07-18
+
+### ✨ Nuevo
+- **Vaciar TODA la media** (Ajustes): un botón que borra todos los audios, notas de voz, fotos,
+  videos y documentos descargados, dejando la carpeta solo con lo necesario para funcionar (los
+  chats y el historial NO se tocan). A diferencia de "Liberar espacio", este **también** borra las
+  notas de voz.
+
+### 🔧 Mejorado
+- **Chats y grupos archivados en silencio**: un chat o grupo archivado ya no suena ni avisa cuando
+  llega un mensaje (queda como un silenciado). Los mensajes igual llegan y los ves al entrar, pero
+  sin interrumpir.
+
+---
+
 ## [2.0.12] — 2026-07-17
 
 ### 🐛 Corregido
@@ -365,6 +380,7 @@ versiones usan [Versionado Semántico](https://semver.org/lang/es/).
 - Separadores de día y de mensajes no leídos.
 - Actualizaciones automáticas.
 
+[2.0.13]: ../../releases/tag/v2.0.13
 [2.0.12]: ../../releases/tag/v2.0.12
 [2.0.11]: ../../releases/tag/v2.0.11
 [2.0.10]: ../../releases/tag/v2.0.10
