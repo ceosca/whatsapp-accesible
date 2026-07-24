@@ -6,6 +6,16 @@ versiones usan [Versionado Semántico](https://semver.org/lang/es/).
 
 ---
 
+## [2.0.14] — 2026-07-18
+
+### ✨ Nuevo
+- **Menú contextual en los chats archivados**: la lista de "Chats archivados" ahora responde a
+  la tecla Aplicaciones / clic derecho con el mismo menú que la lista principal —Abrir,
+  Desarchivar, Silenciar, Marcar como no leído, Exportar chat, Vaciar chat, Eliminar chat y Salir
+  del grupo—. Antes ahí solo se podía Abrir o Desarchivar.
+
+---
+
 ## [2.0.13] — 2026-07-18
 
 ### ✨ Nuevo
@@ -380,6 +390,7 @@ versiones usan [Versionado Semántico](https://semver.org/lang/es/).
 - Separadores de día y de mensajes no leídos.
 - Actualizaciones automáticas.
 
+[2.0.14]: ../../releases/tag/v2.0.14
 [2.0.13]: ../../releases/tag/v2.0.13
 [2.0.12]: ../../releases/tag/v2.0.12
 [2.0.11]: ../../releases/tag/v2.0.11
