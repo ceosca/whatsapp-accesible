@@ -6,6 +6,184 @@ versiones usan [Versionado Semántico](https://semver.org/lang/es/).
 
 ---
 
+## [3.0.0] — 2026-07-25
+
+La actualización más grande hasta ahora. Se revisó la aplicación entera —el motor que habla
+con WhatsApp y toda la interfaz— y se corrigieron **unos setenta problemas**. Muchos no eran
+fallas ruidosas sino algo peor: la app decía que había hecho algo **y no lo había hecho**.
+
+Están todos acá abajo. Si no te interesa leerlos, no hace falta: se instala igual y no toca
+tus chats. Pero preferimos que se pueda saber qué se arregló.
+
+> **Se instala sola** desde cualquier versión 1.2.10 o posterior. Tus chats, tu historial y tu
+> sesión quedan intactos.
+
+### 🔐 Seguridad
+
+- **Un archivo recibido ya no se ejecuta con un Enter.** La extensión de lo que te mandan la
+  elige quien te lo manda. Si el archivo es un **programa** (`.exe`, `.bat`, `.ps1`, `.msi`,
+  `.lnk` y compañía), ahora aparece un aviso que lo dice con todas las letras y hay que
+  confirmar. Antes se abría directamente, y con un lector de pantalla no hay forma de notar que
+  "informe.pdf.exe" no es un documento.
+- **Se cerró un agujero por el que alguien podía dejarte archivos donde quisiera.** El
+  identificador de un mensaje también lo elige quien lo envía, y se usaba tal cual como nombre
+  de archivo: un identificador armado a propósito escribía **fuera de la carpeta de la
+  aplicación** —incluida la carpeta de Inicio de Windows—. Ahora se sanean el nombre y la
+  extensión.
+- **La misma falla afectaba a los chats exportados** (los nombres dentro del `.zip`), y también
+  quedó cerrada.
+- **La pestaña Estados** abría archivos sin ese control. Ahora usa el mismo aviso que el chat.
+
+### 🧯 Cosas que se perdían
+
+- **Mensajes que desaparecían al ir hacia atrás en un chat.** La paginación avanzaba por hora, y
+  las horas tienen precisión de un segundo: cuando varios mensajes caían en el mismo segundo —lo
+  normal en un grupo activo— todos menos uno quedaban **salteados para siempre**. Ahora avanza
+  por hora **y** por mensaje.
+- **La media borrada no volvía nunca.** Después de usar "Vaciar TODA la media", "Liberar espacio"
+  o de mover la carpeta, la nota de voz quedaba **inservible para siempre**: la app seguía
+  apuntando a un archivo que ya no existía y no intentaba bajarlo de nuevo.
+- **Una nota de voz se podía borrar antes de enviarse.** La limpieza de archivos temporales
+  eliminaba el archivo que el mensaje todavía apuntaba, y a veces uno que aún no se había subido.
+- **Las encuestas perdían sus votos al recargar el chat** (los datos estaban guardados; lo que
+  fallaba era leerlos), y una encuesta reentregada por WhatsApp **borraba el conteo**.
+- **La marca "editado" desaparecía al reiniciar**: un mensaje editado quedaba indistinguible del
+  original.
+- **Un corte de luz podía borrarte todos los ajustes.** El archivo de configuración se escribía
+  encima del anterior; si el proceso moría a mitad, arrancabas con todo en cero, dispositivos de
+  audio incluidos. Ahora se escribe de forma atómica.
+
+### 🗣️ Cuando algo fallaba, la app no lo decía (o decía lo contrario)
+
+- **Un mensaje enviado sin internet se perdía mientras la app decía "enviado".** El error se
+  descartaba si mencionaba la conexión.
+- **Reenviar algo que no estaba descargado** decía, de corrido: *"Descargá el archivo antes de
+  reenviarlo. Mensaje reenviado."*
+- **Una grabación que fallaba anunciaba "Audio enviado"** y dibujaba el mensaje como si hubiera
+  salido.
+- **Un audio que no se podía reproducir era silencio total** — imposible de distinguir de que la
+  app se hubiera colgado.
+- **"Guardar como" se colgaba para siempre** si salías del chat mientras se descargaba.
+- **Un aviso de Windows rechazado no dejaba nada**: ni sonido, ni voz, ni notificación. El
+  mensaje pasaba desapercibido.
+- **Agregar a alguien a un grupo fallaba en silencio.** WhatsApp informa los fallos persona por
+  persona; se descartaban. Ahora dice quién y por qué (privacidad, no está en WhatsApp, ya está
+  en el grupo…).
+- **"Eliminar para todos"** avisaba de un fallo con un texto genérico. Ahora dice lo que
+  realmente pasó: el mensaje sigue en el chat de la otra persona.
+- **Cambiar una configuración del grupo** dejaba la casilla marcada aunque el cambio se hubiera
+  rechazado.
+- **El diálogo de Privacidad podía mostrarte valores inventados.** Si la consulta fallaba, cada
+  opción caía en "Todos" — te decía que tu última vez y tu foto las ve cualquiera cuando quizás
+  estaban en "nadie".
+
+### 🔊 Audio
+
+- **Una nota de voz se podía ir al contacto equivocado.** Si salías del chat mientras grababas, la
+  grabación seguía viva: el micrófono abierto, el otro recibiendo "grabando audio…" para siempre,
+  y el próximo "Enviar audio" mandaba esa grabación **al chat que tuvieras abierto**.
+- **Un fallo al abrir el dispositivo podía dejar la reproducción muda** hasta cambiar de
+  dispositivo o cerrar el reproductor.
+- **Cambiar la velocidad justo cuando arrancaba otro audio** mezclaba las muestras del anterior.
+- **Los audios largos se comían toda la memoria**: se decodificaban enteros y sin tope. Ahora hay
+  un límite y se avisa si el audio es más largo.
+- **Un archivo de música se hacía pasar por nota de voz** ("mensaje de voz (0:00)", sin el
+  nombre). Ahora muestra su nombre, y el filtro "Notas de voz" vuelve a funcionar —estaba siempre
+  vacío—.
+- **Alt+M (escuchar lo grabado)** dejaba armada la cadena de audios: al terminar reproducía sola
+  la nota siguiente **y mandaba el recibo de "reproducido"** de algo que nunca escuchaste. Y lo
+  reproducía a la velocidad pegada en vez de a 1x.
+- **Un video reenviado llegaba como documento**, sin previsualización. También se agregó el envío
+  de música como audio reproducible.
+
+### 💬 Mensajes, orden y lectura
+
+- **Un mensaje escrito en varias líneas se leía solo hasta la primera.** Si te mandaban un
+  nombre, un documento, una dirección y un teléfono en cuatro renglones, veías **solo el nombre**,
+  sin ninguna pista de que faltaba el resto. Afectaba a las cuatro listas (chat, Recientes,
+  Destacados y Estados).
+- **Los identificadores de tus mensajes se cruzaban** cuando mandabas dos seguidos rápido: a
+  partir de ahí, cada cambio de estado, edición o borrado actuaba **sobre el mensaje equivocado**
+  —incluido "eliminar para todos"—.
+- **Borrar un mensaje eliminaba otro de la vista** si la lista se movía mientras el diálogo estaba
+  abierto.
+- **La línea "No leídos" desaparecía** al cargar mensajes viejos o al reordenarse, y quedaba mal
+  ubicada si habías respondido en el medio.
+- **Con la app minimizada, los mensajes no se agregaban al chat abierto** — y al volver se
+  marcaban como leídos igual, así que el otro veía "Leído" de algo que no podías ver.
+- **Responder con una nota de voz, una foto o un archivo perdía la cita**, y el banner de
+  respuesta quedaba armado para el mensaje siguiente.
+- **En los grupos, el autor de un mensaje citado era el nombre del grupo.**
+- **"Editar" se ofrecía siempre**, incluso pasados los 15 minutos que permite WhatsApp: la edición
+  se descartaba pero la app igual reescribía el texto, así que vos veías tu corrección y el otro
+  nunca.
+- **Dos secciones "Hoy"** si dejabas la app abierta pasada la medianoche.
+- **El estado de un mensaje podía ir para atrás** (de "Leído" a "Enviado") cuando WhatsApp lo
+  reentregaba.
+- **Al responder a un contacto nuevo**, el chat podía quedar con tu propio nombre.
+- **El número de una tarjeta de contacto no se mostraba en ningún lado**: recibías un contacto y
+  solo veías el nombre.
+
+### 👥 Grupos
+
+- **"Eliminar chat" se quitó de los grupos.** No borraba solo en esta app: hacía desaparecer el
+  chat y todos sus mensajes **también del teléfono** y de cualquier dispositivo vinculado, sin
+  vuelta atrás, mientras seguías siendo miembro. Quedan "Salir del grupo" y "Vaciar chat", que es
+  lo que hace WhatsApp mismo.
+- **Podías quedar bloqueado de administrar tu propio grupo.** En los grupos que usan el
+  direccionamiento nuevo de WhatsApp, la app no te reconocía como administrador.
+- **Un grupo renombrado por otra persona conservaba el nombre viejo para siempre**, y que te
+  agregaran, te sacaran o te hicieran administrador pasaba en silencio. Ahora se avisa (y un grupo
+  silenciado sigue silencioso: solo se anuncia lo que te afecta a vos).
+- **Un grupo recién creado, o al que te acababas de unir, tardaba hasta un minuto en aparecer.**
+- **El chat de un grupo eliminado volvía en el siguiente arranque.**
+- **Se ofrecía agregar a gente que ya estaba en el grupo.**
+- **Un grupo archivado seguía apareciendo** en la pestaña Grupos.
+- **Destacar un mensaje recibido no se sincronizaba** con el teléfono.
+
+### 🔌 Conexión, arranque y actualizaciones
+
+- **La actualización automática no se habría instalado.** Al aceptar, el proceso no terminaba de
+  cerrarse y el instalador —que espera a que termine— se quedaba esperando para siempre.
+- **Si el motor moría, la app seguía como si nada**, sin poder mandar ni recibir, sin decir nada.
+  Ahora lo detecta, lo avisa y lo reinicia.
+- **Abrir la app sin internet mataba el motor** para toda la sesión. Ahora reintenta.
+- **Si desvinculabas el dispositivo desde el teléfono**, la app no se enteraba.
+- **Si faltaba un componente** (por ejemplo si el antivirus se lo llevó), hacías doble clic y **no
+  pasaba absolutamente nada**: ni ventana, ni error, ni sonido.
+- **La pantalla de vinculación era un callejón sin salida**: los códigos vencen al minuto y no
+  había forma de pedir otro sin cerrar la aplicación.
+- **"Iniciar con Windows" decía "activado" apuntando a una carpeta vieja** después de mover la
+  aplicación de lugar.
+
+### 🧭 Navegación y detalles
+
+- **El diálogo "Reenviar a…" no se podía cerrar con Escape** — era el único sin salida por
+  teclado.
+- **El mini reproductor escondía el control que tenía el foco** sin devolverlo a la lista.
+- **El administrador de grupos se abría solo** en un momento cualquiera, después de un pedido
+  fallido.
+- **Destacados abría los grupos como si fueran chats privados.**
+- **Un chat con el silencio ya vencido seguía figurando como silenciado.**
+- **Los archivados nunca mostraban su línea de "No leídos".**
+- **Las encuestas de varias respuestas** hechas en otro cliente se mostraban como de una sola
+  opción.
+- **El chat exportado de un grupo se titulaba con su identificador interno** en vez del nombre.
+- **Copiar en un audio recibido vaciaba el portapapeles** y anunciaba "Copiado".
+
+### 🛠️ Por dentro
+
+- Se corrigió un fallo que **mataba el motor** (acceso concurrente a datos compartidos) cuando
+  alguien renombraba un grupo en el momento justo.
+- Las búsquedas de encuestas recorrían la tabla entera de mensajes en cada voto: ahora hay índice.
+- La confirmación de envío viaja con una marca propia, para que el estado de un mensaje no pueda
+  caer en otro.
+- El motor y la interfaz se auditaron en tres rondas independientes, y cada hallazgo se verificó
+  releyendo el código antes de darlo por bueno. Se sumaron pruebas automáticas para los arreglos
+  que se podían cubrir así.
+
+---
+
 ## [2.0.14] — 2026-07-18
 
 ### ✨ Nuevo
@@ -390,6 +568,7 @@ versiones usan [Versionado Semántico](https://semver.org/lang/es/).
 - Separadores de día y de mensajes no leídos.
 - Actualizaciones automáticas.
 
+[3.0.0]: ../../releases/tag/v3.0.0
 [2.0.14]: ../../releases/tag/v2.0.14
 [2.0.13]: ../../releases/tag/v2.0.13
 [2.0.12]: ../../releases/tag/v2.0.12
